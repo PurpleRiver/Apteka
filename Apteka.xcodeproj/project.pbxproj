@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		4935A4C2253C131300BA2456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935A4C1253C131300BA2456 /* AppDelegate.swift */; };
 		4935A4C4253C131300BA2456 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935A4C3253C131300BA2456 /* SceneDelegate.swift */; };
-		4935A4C6253C131300BA2456 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935A4C5253C131300BA2456 /* ViewController.swift */; };
-		4935A4C9253C131300BA2456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4935A4C7253C131300BA2456 /* Main.storyboard */; };
 		4935A4CB253C131600BA2456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4935A4CA253C131600BA2456 /* Assets.xcassets */; };
 		4935A4CE253C131600BA2456 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4935A4CC253C131600BA2456 /* LaunchScreen.storyboard */; };
+		4935A4DA253C141600BA2456 /* DrugsTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4935A4D9253C141600BA2456 /* DrugsTableView.storyboard */; };
+		4935A4DF253C295700BA2456 /* DataForDrugs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935A4DE253C295700BA2456 /* DataForDrugs.swift */; };
+		4935A4E2253C29A100BA2456 /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935A4E1253C29A100BA2456 /* Medicine.swift */; };
+		4935A4E5253C2CFA00BA2456 /* CatalogTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935A4E4253C2CFA00BA2456 /* CatalogTableView.swift */; };
+		4935A4E8253C2D7700BA2456 /* MedicineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935A4E7253C2D7700BA2456 /* MedicineCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4935A4BE253C131300BA2456 /* Apteka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apteka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4935A4C1253C131300BA2456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4935A4C3253C131300BA2456 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4935A4C5253C131300BA2456 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4935A4C8253C131300BA2456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4935A4CA253C131600BA2456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4935A4CD253C131600BA2456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4935A4CF253C131600BA2456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4935A4D9253C141600BA2456 /* DrugsTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DrugsTableView.storyboard; sourceTree = "<group>"; };
+		4935A4DE253C295700BA2456 /* DataForDrugs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataForDrugs.swift; sourceTree = "<group>"; };
+		4935A4E1253C29A100BA2456 /* Medicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
+		4935A4E4253C2CFA00BA2456 /* CatalogTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogTableView.swift; sourceTree = "<group>"; };
+		4935A4E7253C2D7700BA2456 /* MedicineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +64,14 @@
 			children = (
 				4935A4C1253C131300BA2456 /* AppDelegate.swift */,
 				4935A4C3253C131300BA2456 /* SceneDelegate.swift */,
-				4935A4C5253C131300BA2456 /* ViewController.swift */,
-				4935A4C7253C131300BA2456 /* Main.storyboard */,
 				4935A4CA253C131600BA2456 /* Assets.xcassets */,
 				4935A4CC253C131600BA2456 /* LaunchScreen.storyboard */,
 				4935A4CF253C131600BA2456 /* Info.plist */,
+				4935A4D9253C141600BA2456 /* DrugsTableView.storyboard */,
+				4935A4DE253C295700BA2456 /* DataForDrugs.swift */,
+				4935A4E1253C29A100BA2456 /* Medicine.swift */,
+				4935A4E4253C2CFA00BA2456 /* CatalogTableView.swift */,
+				4935A4E7253C2D7700BA2456 /* MedicineCell.swift */,
 			);
 			path = Apteka;
 			sourceTree = "<group>";
@@ -125,8 +134,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4935A4CE253C131600BA2456 /* LaunchScreen.storyboard in Resources */,
+				4935A4DA253C141600BA2456 /* DrugsTableView.storyboard in Resources */,
 				4935A4CB253C131600BA2456 /* Assets.xcassets in Resources */,
-				4935A4C9253C131300BA2456 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +146,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4935A4C6253C131300BA2456 /* ViewController.swift in Sources */,
 				4935A4C2253C131300BA2456 /* AppDelegate.swift in Sources */,
 				4935A4C4253C131300BA2456 /* SceneDelegate.swift in Sources */,
+				4935A4DF253C295700BA2456 /* DataForDrugs.swift in Sources */,
+				4935A4E5253C2CFA00BA2456 /* CatalogTableView.swift in Sources */,
+				4935A4E2253C29A100BA2456 /* Medicine.swift in Sources */,
+				4935A4E8253C2D7700BA2456 /* MedicineCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4935A4C7253C131300BA2456 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4935A4C8253C131300BA2456 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4935A4CC253C131600BA2456 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
