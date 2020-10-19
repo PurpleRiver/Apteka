@@ -14,6 +14,7 @@ struct Medicine {
     let price: String
     var isFavorite: Bool = false
     
+    
     init(name: String, producer: String, image: String, price: String, isFavorite: Bool) {
         self.name       = name
         self.producer   = producer
@@ -24,6 +25,6 @@ struct Medicine {
     
     
     init() {
-        self.init(name: "Doppel Herzaktiv таблетки 60", producer: "КВАИССЕР ФАРМА", image: "Vitamins", price: "600R", isFavorite: false)
+        self.init(name: "", producer: "", image: "", price: "", isFavorite: false)
     }
 }

@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0zt-a4-oK4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -33,13 +32,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jaO-Kc-hci">
-                                            <rect key="frame" x="20" y="19.5" width="80" height="80.5"/>
+                                            <rect key="frame" x="20" y="20" width="80" height="80"/>
                                             <color key="tintColor" systemColor="systemGreenColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="80" id="230-ZW-Ous"/>
                                                 <constraint firstAttribute="width" constant="80" id="tWc-2Q-5Wz"/>
                                             </constraints>
-                                            <imageReference key="image" image="sun.max" catalog="system" renderingMode="template"/>
+                                            <imageReference key="image" image="Vitamins" renderingMode="template"/>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="kMC-nM-8vY">
                                             <rect key="frame" x="108" y="21" width="252" height="40.5"/>
@@ -135,9 +134,38 @@
             <point key="canvasLocation" x="1692.753623188406" y="11.383928571428571"/>
         </scene>
         <!--Table View Controller-->
+        <scene sceneID="Ifk-mf-thB">
+            <objects>
+                <tableViewController id="DaR-N3-EtV" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ykL-Ym-9vp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteCell" id="Hso-xu-Euw">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hso-xu-Euw" id="Llg-RA-pTk">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DaR-N3-EtV" id="icn-Q7-Oto"/>
+                            <outlet property="delegate" destination="DaR-N3-EtV" id="TMS-Wc-i7Y"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="7pz-rf-kxN"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qlq-ZD-aKf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1693" y="751"/>
+        </scene>
+        <!--Detail Medicine Table View-->
         <scene sceneID="eGR-pg-FFE">
             <objects>
-                <tableViewController id="fMM-vM-lB7" sceneMemberID="viewController">
+                <tableViewController id="fMM-vM-lB7" customClass="DetailMedicineTableView" customModule="Apteka" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1eo-mg-4iE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,6 +182,9 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                     <state key="normal" title="Купить"/>
+                                    <connections>
+                                        <action selector="buyButonIsPressed:" destination="fMM-vM-lB7" eventType="touchUpInside" id="ark-dT-s7u"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -167,7 +198,7 @@
                         <sections>
                             <tableViewSection id="lwN-G4-MTX">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="329" id="t8t-bT-5NO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="329" id="t8t-bT-5NO">
                                         <rect key="frame" x="0.0" y="28" width="414" height="329"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t8t-bT-5NO" id="w5a-HR-2tb">
@@ -213,6 +244,9 @@
                                                     <state key="normal">
                                                         <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="favoriteButtonIsPressed:" destination="fMM-vM-lB7" eventType="touchUpInside" id="jnk-1v-giy"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -408,6 +442,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="nKl-UT-hoC"/>
+                    <connections>
+                        <outlet property="favoriteButton" destination="MW0-rW-QMy" id="TKp-B9-2qG"/>
+                        <outlet property="imageMedicine" destination="D1a-fN-Hg6" id="NHc-2D-pBU"/>
+                        <outlet property="manufacturerLabel" destination="Aka-0u-Ikk" id="ohG-dX-2mo"/>
+                        <outlet property="nameLabel" destination="dbN-Hq-aFD" id="ozR-jd-uGI"/>
+                        <outlet property="priceLabel" destination="sKp-hn-8Fo" id="uJb-uS-few"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RpC-Ol-zMl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -445,6 +486,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0zt-a4-oK4" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" id="mDs-BR-6DU">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -453,18 +495,38 @@
                     </tabBar>
                     <connections>
                         <segue destination="2cy-GD-AEu" kind="relationship" relationship="viewControllers" id="dww-dP-ZIL"/>
+                        <segue destination="3fk-ac-MjD" kind="relationship" relationship="viewControllers" id="dV3-sc-XcN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gf4-xu-po6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-127.53623188405798" y="11.383928571428571"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BUK-wg-ekh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3fk-ac-MjD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="ajj-dh-8d4"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3WF-P8-s5H">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DaR-N3-EtV" kind="relationship" relationship="rootViewController" id="MSs-X5-TIz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zZ0-CJ-3ZS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="783" y="751"/>
+        </scene>
     </scenes>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="Vitamins" width="76" height="76"/>
+        <image name="Vitamins" width="76" height="76"/>
         <image name="heart" catalog="system" width="128" height="109"/>
-        <image name="sun.max" catalog="system" width="128" height="124"/>
         <image name="text.book.closed" catalog="system" width="115" height="128"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
