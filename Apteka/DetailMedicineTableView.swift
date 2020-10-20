@@ -42,6 +42,6 @@ class DetailMedicineTableView: UITableViewController {
         imageMedicine.image     = #imageLiteral(resourceName: "Vitamins")
         nameLabel.text          = medicine.name
         priceLabel.text         = medicine.price
-        manufacturerLabel.text  = medicine.producer
+        manufacturerLabel.text  = medicine.manufacturer
     }
 }

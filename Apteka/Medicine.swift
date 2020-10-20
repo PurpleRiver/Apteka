@@ -8,23 +8,23 @@
 import Foundation
 
 struct Medicine {
-    let name: String
-    let producer: String
+    var name: String
+    let manufacturer: String
     let image: String
     let price: String
     var isFavorite: Bool = false
     
     
-    init(name: String, producer: String, image: String, price: String, isFavorite: Bool) {
-        self.name       = name
-        self.producer   = producer
-        self.image      = image
-        self.price      = price
-        self.isFavorite = isFavorite
+    init(name: String, manufacturer: String, image: String, price: String, isFavorite: Bool) {
+        self.name           = name
+        self.manufacturer   = manufacturer
+        self.image          = image
+        self.price          = price
+        self.isFavorite     = isFavorite
     }
     
     
     init() {
-        self.init(name: "", producer: "", image: "", price: "", isFavorite: false)
+        self.init(name: "", manufacturer: "", image: "Vitamin B12", price: "", isFavorite: false)
     }
 }

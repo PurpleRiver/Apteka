@@ -21,4 +21,6 @@ class MedicineCell: UITableViewCell {
     @IBAction func favoriteButtonIsPresed(_ sender: UIButton) {
         
     }
+    
+    
 }

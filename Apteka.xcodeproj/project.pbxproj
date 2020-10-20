@@ -17,8 +17,25 @@
 		4935A4E5253C2CFA00BA2456 /* CatalogTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935A4E4253C2CFA00BA2456 /* CatalogTableView.swift */; };
 		4935A4E8253C2D7700BA2456 /* MedicineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935A4E7253C2D7700BA2456 /* MedicineCell.swift */; };
 		4935A4EB253C3FF000BA2456 /* DetailMedicineTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935A4EA253C3FF000BA2456 /* DetailMedicineTableView.swift */; };
-		92F7B91D4E1135DCABEF5F2B /* Pods_Apteka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C545F57479E111790843C581 /* Pods_Apteka.framework */; };
+		494D4B44253EEF0C005D4AAB /* Pods_Apteka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C545F57479E111790843C581 /* Pods_Apteka.framework */; };
+		494D4B45253EEF0C005D4AAB /* Pods_Apteka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C545F57479E111790843C581 /* Pods_Apteka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		49819659253EB9AE00458521 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49819658253EB9AE00458521 /* Database.swift */; };
+		49819664253EE9CF00458521 /* drugs.db in Resources */ = {isa = PBXBuildFile; fileRef = 49819663253EE9CF00458521 /* drugs.db */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		494D4B46253EEF0C005D4AAB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				494D4B45253EEF0C005D4AAB /* Pods_Apteka.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		42BCFE37BD1F1468255DAD18 /* Pods-Apteka.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apteka.debug.xcconfig"; path = "Target Support Files/Pods-Apteka/Pods-Apteka.debug.xcconfig"; sourceTree = "<group>"; };
@@ -34,6 +51,8 @@
 		4935A4E4253C2CFA00BA2456 /* CatalogTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogTableView.swift; sourceTree = "<group>"; };
 		4935A4E7253C2D7700BA2456 /* MedicineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCell.swift; sourceTree = "<group>"; };
 		4935A4EA253C3FF000BA2456 /* DetailMedicineTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMedicineTableView.swift; sourceTree = "<group>"; };
+		49819658253EB9AE00458521 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		49819663253EE9CF00458521 /* drugs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = drugs.db; sourceTree = "<group>"; };
 		5713633663202B7560361878 /* Pods-Apteka.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apteka.release.xcconfig"; path = "Target Support Files/Pods-Apteka/Pods-Apteka.release.xcconfig"; sourceTree = "<group>"; };
 		C545F57479E111790843C581 /* Pods_Apteka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Apteka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -43,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92F7B91D4E1135DCABEF5F2B /* Pods_Apteka.framework in Frameworks */,
+				494D4B44253EEF0C005D4AAB /* Pods_Apteka.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +117,8 @@
 		49819652253DD5C400458521 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
+				49819658253EB9AE00458521 /* Database.swift */,
+				49819663253EE9CF00458521 /* drugs.db */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -123,6 +144,7 @@
 				4935A4BB253C131300BA2456 /* Frameworks */,
 				4935A4BC253C131300BA2456 /* Resources */,
 				F5C7A1AFDAF1E4599E0A4DD3 /* [CP] Embed Pods Frameworks */,
+				494D4B46253EEF0C005D4AAB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -171,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4935A4CE253C131600BA2456 /* LaunchScreen.storyboard in Resources */,
+				49819664253EE9CF00458521 /* drugs.db in Resources */,
 				4935A4DA253C141600BA2456 /* DrugsTableView.storyboard in Resources */,
 				4935A4CB253C131600BA2456 /* Assets.xcassets in Resources */,
 			);
@@ -231,6 +254,7 @@
 				4935A4EB253C3FF000BA2456 /* DetailMedicineTableView.swift in Sources */,
 				4935A4E5253C2CFA00BA2456 /* CatalogTableView.swift in Sources */,
 				4935A4E2253C29A100BA2456 /* Medicine.swift in Sources */,
+				49819659253EB9AE00458521 /* Database.swift in Sources */,
 				4935A4E8253C2D7700BA2456 /* MedicineCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
