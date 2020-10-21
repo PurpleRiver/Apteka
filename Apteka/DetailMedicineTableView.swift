@@ -14,15 +14,19 @@ class DetailMedicineTableView: UITableViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var manufacturerLabel: UILabel!
+    
     @IBAction func favoriteButtonIsPressed(_ sender: UIButton) {
+        favoriteButton.tintColor = .systemRed
     }
-    @IBAction func buyButonIsPressed(_ sender: UIButton) {
-    }
+
+    @IBAction func buyButonIsPressed(_ sender: UIButton) { }
+    
     var medicine = Medicine()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configurateUI(medicine: medicine)
+        
+        configurateUI()
     }
     
     // MARK: - Table view data source
@@ -38,10 +42,11 @@ class DetailMedicineTableView: UITableViewController {
     }
 
     
-    func configurateUI(medicine: Medicine) {
-        imageMedicine.image     = #imageLiteral(resourceName: "Vitamins")
+    func configurateUI() {
+        imageMedicine.image     = UIImage(named: medicine.image)
         nameLabel.text          = medicine.name
-        priceLabel.text         = medicine.price
+        priceLabel.text         = "\(medicine.price)₽"
         manufacturerLabel.text  = medicine.manufacturer
+        self.title              = medicine.name
     }
 }

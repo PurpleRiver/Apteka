@@ -99,19 +99,27 @@
 		4935A4C0253C131300BA2456 /* Apteka */ = {
 			isa = PBXGroup;
 			children = (
-				4935A4C1253C131300BA2456 /* AppDelegate.swift */,
-				4935A4C3253C131300BA2456 /* SceneDelegate.swift */,
-				4935A4CA253C131600BA2456 /* Assets.xcassets */,
-				4935A4CC253C131600BA2456 /* LaunchScreen.storyboard */,
+				494D4B4D25404FDD005D4AAB /* Supporting files */,
 				4935A4CF253C131600BA2456 /* Info.plist */,
+				4935A4CA253C131600BA2456 /* Assets.xcassets */,
 				4935A4D9253C141600BA2456 /* DrugsTableView.storyboard */,
-				4935A4DE253C295700BA2456 /* DataForDrugs.swift */,
 				4935A4E1253C29A100BA2456 /* Medicine.swift */,
 				4935A4E4253C2CFA00BA2456 /* CatalogTableView.swift */,
 				4935A4E7253C2D7700BA2456 /* MedicineCell.swift */,
 				4935A4EA253C3FF000BA2456 /* DetailMedicineTableView.swift */,
 			);
 			path = Apteka;
+			sourceTree = "<group>";
+		};
+		494D4B4D25404FDD005D4AAB /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				4935A4DE253C295700BA2456 /* DataForDrugs.swift */,
+				4935A4C1253C131300BA2456 /* AppDelegate.swift */,
+				4935A4C3253C131300BA2456 /* SceneDelegate.swift */,
+				4935A4CC253C131600BA2456 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 		49819652253DD5C400458521 /* DataBase */ = {

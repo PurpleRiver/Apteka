@@ -9,9 +9,9 @@ import Foundation
 
 struct Medicine {
     var name: String
-    let manufacturer: String
-    let image: String
-    let price: String
+    var manufacturer: String
+    var image: String
+    var price: String
     var isFavorite: Bool = false
     
     
@@ -25,6 +25,6 @@ struct Medicine {
     
     
     init() {
-        self.init(name: "", manufacturer: "", image: "Vitamin B12", price: "", isFavorite: false)
+        self.init(name: "", manufacturer: "", image: "", price: "", isFavorite: false)
     }
 }

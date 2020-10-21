@@ -11,21 +11,12 @@ import SQLite
 class CatalogTableView: UITableViewController {
     
     var medicine: [Medicine] = []
-    
-    let database = Database.shared.connection
-    let meds = Database.shared.drugs
-    let name = Expression<String>("name")
-    let manufacturer = Expression<String>("manufacturer")
-    let price = Expression<String>("price")
-    let image = Expression<String>("image")
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
         medicine = Database.shared.getAllFromTable()
-        print(medicine)
     }
-    
     
     // MARK: - Table view data source
 
@@ -35,33 +26,24 @@ class CatalogTableView: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DrugsCell", for: indexPath) as! MedicineCell
-        
-//        for medicine in try! Database.shared.connection!.prepare(meds)
-//
-//
-        let med = medicine[indexPath.row]
-        cell.nameMedicine.text      = med.name
-        cell.manufacturer.text      = med.manufacturer
-        cell.priceLabel.text        = med.price
-        cell.imageMedicine.image    = UIImage(named: med.image)
+
+        let meds                    = medicine[indexPath.row]
+        cell.nameMedicine.text      = meds.name
+        cell.manufacturer.text      = meds.manufacturer
+        cell.priceLabel.text        = "\(meds.price)₽"
+        cell.imageMedicine.image    = UIImage(named: meds.image)
         
         return cell
     }
 
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        medicine = drugs[indexPath.row].self
-        print("did select row \(medicine)")
-    }
-    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetailMedicine" {
-            guard let destinationVC = segue.destination as? DetailMedicineTableView else { return }
-            
-//            destinationVC.medicine = medicine
-            print("segue \(medicine)")
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationVC = segue.destination as! DetailMedicineTableView
+                destinationVC.medicine = medicine[indexPath.row]
+            }
         }
     }
 }

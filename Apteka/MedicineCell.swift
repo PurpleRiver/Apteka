@@ -15,12 +15,10 @@ class MedicineCell: UITableViewCell {
     
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
-    @IBAction func buyButton(_ sender: UIButton) {
-        
-    }
+    
+    @IBAction func buyButton(_ sender: UIButton) { }
+    
     @IBAction func favoriteButtonIsPresed(_ sender: UIButton) {
-        
+        favoriteButton.tintColor = .systemRed
     }
-    
-    
 }

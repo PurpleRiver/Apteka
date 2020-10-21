@@ -14,7 +14,11 @@ class Database {
     
     public let drugs = Table("drugs")
     
-    let name = Expression<String>("name")
+    let name            = Expression<String>("name")
+    let manufacturer    = Expression<String>("manufacturer")
+    let price           = Expression<String>("price")
+    let image           = Expression<String>("image")
+    let isFavorite      = Expression<Bool>("isFavorite")
     
     private init() {
         do {
@@ -22,16 +26,27 @@ class Database {
             connection = try Connection(dbPath, readonly: true)
         } catch {
             connection = nil
+            // Error handling
         }
     }
     
     func getAllFromTable() -> [Medicine] {
         var arrayOfDrugs = [Medicine]()
         for medicine in try! connection!.prepare(drugs) {
-            var meds: Medicine = Medicine()
-            meds.name = medicine[name]
+            var meds: Medicine  = Medicine()
+            meds.name           = medicine[name]
+            meds.manufacturer   = medicine[manufacturer]
+            meds.price          = medicine[price]
+            meds.image          = medicine[image]
+            meds.isFavorite     = medicine[isFavorite]
+            
             arrayOfDrugs.append(meds)
         }
         return arrayOfDrugs
+    }
+    
+    
+    func favoritesIsToggled() {
+        
     }
 }
