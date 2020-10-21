@@ -80,7 +80,7 @@
 		4935A4B5253C131300BA2456 = {
 			isa = PBXGroup;
 			children = (
-				49819652253DD5C400458521 /* DataBase */,
+				49819652253DD5C400458521 /* Database */,
 				4935A4C0253C131300BA2456 /* Apteka */,
 				4935A4BF253C131300BA2456 /* Products */,
 				7DF0898951437A504B9369A3 /* Pods */,
@@ -99,6 +99,7 @@
 		4935A4C0253C131300BA2456 /* Apteka */ = {
 			isa = PBXGroup;
 			children = (
+				49819663253EE9CF00458521 /* drugs.db */,
 				494D4B4D25404FDD005D4AAB /* Supporting files */,
 				4935A4CF253C131600BA2456 /* Info.plist */,
 				4935A4CA253C131600BA2456 /* Assets.xcassets */,
@@ -122,13 +123,12 @@
 			path = "Supporting files";
 			sourceTree = "<group>";
 		};
-		49819652253DD5C400458521 /* DataBase */ = {
+		49819652253DD5C400458521 /* Database */ = {
 			isa = PBXGroup;
 			children = (
 				49819658253EB9AE00458521 /* Database.swift */,
-				49819663253EE9CF00458521 /* drugs.db */,
 			);
-			path = DataBase;
+			path = Database;
 			sourceTree = "<group>";
 		};
 		7DF0898951437A504B9369A3 /* Pods */ = {

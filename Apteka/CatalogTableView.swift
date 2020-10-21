@@ -27,11 +27,13 @@ class CatalogTableView: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DrugsCell", for: indexPath) as! MedicineCell
 
-        let meds                    = medicine[indexPath.row]
-        cell.nameMedicine.text      = meds.name
-        cell.manufacturer.text      = meds.manufacturer
-        cell.priceLabel.text        = "\(meds.price)₽"
-        cell.imageMedicine.image    = UIImage(named: meds.image)
+        let meds                        = medicine[indexPath.row]
+        cell.nameMedicine.text          = meds.name
+        cell.manufacturer.text          = meds.manufacturer
+        
+        cell.priceLabel.text            = "\(meds.price)₽"
+        cell.imageMedicine.image        = UIImage(named: meds.image)
+        cell.favoriteButton.tintColor   = meds.isFavorite ? .systemRed : .lightGray
         
         return cell
     }

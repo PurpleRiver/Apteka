@@ -10,20 +10,23 @@ import SQLite
 
 class Database {
     static let shared = Database()
-    public var connection: Connection?
+    var connection: Connection?
     
-    public let drugs = Table("drugs")
+    let drugs = Table("drugs")
     
     let name            = Expression<String>("name")
     let manufacturer    = Expression<String>("manufacturer")
     let price           = Expression<String>("price")
     let image           = Expression<String>("image")
-    let isFavorite      = Expression<Bool>("isFavorite")
+    var isFavorite      = Expression<Bool>("isFavorite")
     
     private init() {
         do {
-            guard let dbPath = Bundle.main.path(forResource: "drugs", ofType: "db") else { return }
-            connection = try Connection(dbPath, readonly: true)
+            let path = "/Users/idelusupov/Library/Mobile Documents/com~apple~CloudDocs/Documents/StudyProjects/Apteka/Apteka/"
+            connection = try Connection("\(path)/drugs.db")
+//
+//            guard let dbPath = Bundle.main.path(forResource: "drugs", ofType: "db") else { return }
+//            connection = try Connection(dbPath, readonly: false)
         } catch {
             connection = nil
             // Error handling
@@ -45,8 +48,17 @@ class Database {
         return arrayOfDrugs
     }
     
-    
     func favoritesIsToggled() {
         
+        let favorited = try! connection!.pluck(drugs)
+        
+        if favorited![isFavorite] == false {
+            try! connection?.run(drugs.update(isFavorite <- true))
+//            return true
+        }
+        else if favorited![isFavorite] == true {
+            try! connection?.run(drugs.update(isFavorite <- false))
+//            return false
+        }
     }
 }
