@@ -17,9 +17,6 @@ class MedicineCell: UITableViewCell {
     @IBOutlet weak var favoriteButton: UIButton!
     
     @IBAction func buyButton(_ sender: UIButton) { }
-        
-    @IBAction func favoriteButtonIsPresed(_ sender: UIButton) {
-
-        Database.shared.favoritesIsToggled()
-    }
+    
+//    let reuseID = 
 }

@@ -16,9 +16,12 @@ class DetailMedicineTableView: UITableViewController {
     @IBOutlet weak var manufacturerLabel: UILabel!
     
     @IBAction func favoriteButtonIsPressed(_ sender: UIButton) {
-        favoriteButton.tintColor = .systemRed
+        
+        Database.shared.favoritesIsToggled(name: medicine.name, isFavorite: medicine.isFavorite)
+        updateMedicine()
+        favoriteButton.tintColor = medicine.isFavorite ? .systemRed : .lightGray
     }
-
+    
     @IBAction func buyButonIsPressed(_ sender: UIButton) { }
     
     var medicine = Medicine()
@@ -34,19 +37,28 @@ class DetailMedicineTableView: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
-
-
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 { return 1 }
         else            { return 3 }
     }
-
+    
     
     func configurateUI() {
-        imageMedicine.image     = UIImage(named: medicine.image)
-        nameLabel.text          = medicine.name
-        priceLabel.text         = "\(medicine.price)₽"
-        manufacturerLabel.text  = medicine.manufacturer
-        self.title              = medicine.name
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.imageMedicine.image        = UIImage(named: self.medicine.image)
+            self.nameLabel.text             = self.medicine.name
+            self.priceLabel.text            = "\(self.medicine.price)₽"
+            self.manufacturerLabel.text     = self.medicine.manufacturer
+            self.title                      = self.medicine.name
+            self.favoriteButton.tintColor   = self.medicine.isFavorite ? .systemRed : .lightGray
+        }
+    }
+    
+    
+    func updateMedicine() {
+        medicine.isFavorite.toggle()
     }
 }
