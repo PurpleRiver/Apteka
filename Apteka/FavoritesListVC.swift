@@ -19,6 +19,14 @@ class FavoritesListVC: UITableViewController {
         
         medicine = Database.shared.filterFavorites()
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        medicine = Database.shared.filterFavorites()
+        tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 

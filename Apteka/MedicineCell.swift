@@ -19,5 +19,4 @@ class MedicineCell: UITableViewCell {
     @IBAction func buyButton(_ sender: UIButton) { }
     
     static let reuseID = "DrugCell"
-
 }

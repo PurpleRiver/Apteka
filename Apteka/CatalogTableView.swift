@@ -97,8 +97,8 @@ extension CatalogTableView: UISearchResultsUpdating, UISearchBarDelegate {
     
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        filteredMedicine = []
-        searchController.isActive = false
+        filteredMedicine            = []
+        searchController.isActive   = false
         tableView.reloadData()
     }
 }
