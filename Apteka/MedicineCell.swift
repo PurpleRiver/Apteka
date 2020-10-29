@@ -8,7 +8,7 @@
 import UIKit
 
 class MedicineCell: UITableViewCell {
-    
+            
     @IBOutlet weak var nameMedicine: UILabel!
     @IBOutlet weak var manufacturer: UILabel!
     @IBOutlet weak var imageMedicine: UIImageView!

@@ -17,7 +17,7 @@ class FavoritesListVC: UITableViewController {
         let nibName = UINib(nibName: "MedicineCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: MedicineCell.reuseID)
         
-        medicine = Database.shared.getAllFromTable()
+        medicine = Database.shared.filterFavorites()
     }
 
     // MARK: - Table view data source
